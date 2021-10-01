@@ -15,7 +15,7 @@
           return false;
         }
         if(email.value == "") {
-          alert("Please enter a valid e-mail address.");
+          alert("Please enter your e-mail address.");
           email.focus();
           return false;
         }
