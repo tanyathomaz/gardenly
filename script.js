@@ -97,7 +97,7 @@ var cart = {
 
   // (B3) EMPTY ENTIRE CART
   nuke : function () {
-    if (confirm("Empty cart?")) {
+    if (confirm("Empty cart, are you sure?")) {
       cart.items = {};
       localStorage.removeItem("cart");
       cart.list();
