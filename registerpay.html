@@ -52,26 +52,31 @@
           <p>Please enter your registration and payment details</p>
 			 <h2>Registration  Form</h2>
 			 <p>Registration form for service suppliers</p>
-        
+        <!-- first registration form. when the form submits it runs the js function ValidationForm1  -->
 			
   <form name="RegForm1" action="#" onsubmit="return ValidationForm1()" method="post" >
       <div class="form_settings">
             <p><span>Name</span>
-              <input type="text" id="Name" name="Name"  /></p>
+              <input type="text" id="Name" name="Name"  /></p>  <!-- the text field for name  -->
               <p><span>E-mail Address</span>
-              <input type="text" id="E-mail" name="Email"  /></p>
+              <input type="text" id="E-mail" name="Email"  /></p> <!-- the text field for email -->
               <p><span>Password</span>
-              <input type="password" id="Password" name="Password"  /></p>
+              <input type="password" id="Password" name="Password"  /></p> <!-- the password field for password -->
             <p>&nbsp;</p>
             <p><span>&nbsp;</span>
-              <input class="submit" type="submit" name="Submit" value="Register" />
+              <input class="submit" type="submit" name="Submit" value="Register" /> <!-- submit button which submits the form -->
 				
             </p>
 
 	  </div>
     </form>
 
-			
+<!-- Reference## https://code-boxx.com/simple-vanilla-javascript-shopping-cart/ 
+shopping cart code was referenced from the link above and customised
+ initialise the products in the shopping cart	
+ displays all carting items with pictures and item cost
+ when add to cart button is clicked it increases the count of the items and calculated the total automatically 	
+ -->	
 			
 
 				 <h2>Checkout &amp; Payment</h2>

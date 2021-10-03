@@ -3,28 +3,28 @@
 
 
     // Form validation code .
-      function ValidationForm1() {
+    // this is the ValidateForm1 function triggered by the register button
+      function ValidationForm1() { 
+      //initialising variables
         let username = document.forms["RegForm1"]["Name"];
         let email = document.forms["RegForm1"]["Email"];
-        let phoneNumber = document.forms["RegForm1"]["Telephone"];
-        let select = document.forms["RegForm1"]["Subject"];
         let pass = document.forms["RegForm1"]["Password"];
-        if(username.value == "") {
-          alert("Please enter your name.");
-          username.focus();
-          return false;
+        if(username.value == "") { // checks if username is blank
+          alert("Please enter your name."); // display alert message
+          username.focus(); // moves cursor to username box
+          return false; 
         }
         if(email.value == "") {
           alert("Please enter your e-mail address.");
           email.focus();
           return false;
         }
-        if(email.value.indexOf("@", 0) < 0) {
+        if(email.value.indexOf("@", 0) < 0) { //checks if email field has @ symbol 
           alert("Please enter a valid e-mail address.");
           email.focus();
           return false;
         }
-        if(email.value.indexOf(".", 0) < 0) {
+        if(email.value.indexOf(".", 0) < 0) { //checks if email field has . symbol 
           alert("Please enter a valid e-mail address.");
           email.focus();
           return false;
@@ -35,6 +35,7 @@
           pass.focus();
           return false;
         }
+         // if all validation is successful displays a thank you message 
 		alert("Thank you for Registering with Gardenly!");
         return true;
       }
@@ -45,14 +46,14 @@
 
 
 /* Reference## https://code-boxx.com/simple-vanilla-javascript-shopping-cart/ */
-
-
+//shopping cart code was referenced from the link above and customised
+// initialise the products in the shopping cart
 var products = {
   123: {
-    name : "Indoor Plant",
-    desc : "Lovely indoor plant.",
-    img : "IMG_8710.jpg",
-    price : 10
+    name : "Indoor Plant", // name of the product
+    desc : "Lovely indoor plant.", // description of the product
+    img : "IMG_8710.jpg", //product image
+    price : 10 //price of the product
   },
   124: {
     name : "Kitchen Plant",
@@ -76,7 +77,7 @@ var products = {
 
 
 var cart = {
-  // (A) PROPERTIES
+  // cart properties
   hPdt : null, // HTML products list
   hItems : null, // HTML current cart
   items : {}, // Current items in cart
@@ -154,10 +155,10 @@ var cart = {
       item.appendChild(part);
     }
 
-    // (C3) LOAD CART FROM PREVIOUS SESSION
+    // if page is refreshed load the cart from previous session
     cart.load();
 
-    // (C4) LIST CURRENT CART ITEMS
+  // if page is refreshed list current cart items
     cart.list();
   },
 
@@ -213,11 +214,12 @@ var cart = {
         part.addEventListener("change", cart.change);
         item.appendChild(part);
 
+// calculates the total number of items and the total cost for each item
         // SUBTOTAL
         subtotal = cart.items[id] * p.price;
         total += subtotal;
       }
-
+// calculates the total cost for all items 
       // TOTAL AMOUNT
       item = document.createElement("div");
       item.className = "c-total";
@@ -225,6 +227,7 @@ var cart = {
       item.innerHTML ="TOTAL: $" + total;
       cart.hItems.appendChild(item);
 
+// when empty button is clicked all items are cleared by running the nuke function 
       // EMPTY BUTTONS
       item = document.createElement("input");
       item.type = "button";
@@ -234,6 +237,7 @@ var cart = {
       cart.hItems.appendChild(item);
 
       // CHECKOUT BUTTONS
+      // when checkout button is clicked the checkout function is executed
       item = document.createElement("input");
       item.type = "button";
       item.value = "Checkout";
@@ -244,6 +248,8 @@ var cart = {
   },
 
   // (E) ADD ITEM INTO CART
+  // when add to cart button is clicked it increments the count by one
+  // if the item is not in the cart then it adds one but if it is already present then it increments the count by 1.
   add : function () {
     if (cart.items[this.dataset.id] == undefined) {
       cart.items[this.dataset.id] = 1;
@@ -281,7 +287,8 @@ var cart = {
     cart.list();
   },
 
-  // (H) CHECKOUT
+  // function to call when checkout button is clicked
+  // displays a thank you message with total amount and automatically clears the cart 
   checkout : function () {
 
     alert("Thank you, Your order has been processed!" + "\n\n"  + document.getElementById("c-total").innerHTML);
