@@ -3,6 +3,7 @@
 
 
     // Form validation code .
+    // https://www.tutorialspoint.com/javascript/javascript_form_validations.htm
     // this is the ValidateForm1 function triggered by the register button
       function ValidationForm1() { 
       //initialising variables
