@@ -80,7 +80,7 @@ var cart = {
   hPdt : null, // HTML products list
   hItems : null, // HTML current cart
   items : {}, // Current items in cart
-  iURL : "images/", // Product image URL folder
+  iURL : "", // Product image URL folder
 
   // (B) LOCALSTORAGE CART
   // (B1) SAVE CURRENT CART INTO LOCALSTORAGE
